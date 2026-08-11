@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -Force -File | Select-Object @{n='Path';e={$_.FullName.Replace\\('C:\\\\Users\\\\Alex\\\\Downloads\\\\taxidog\\\\',''\\)}}, Length | Sort-Object Path | Format-Table -AutoSize)"
+    ]
+  }
+}

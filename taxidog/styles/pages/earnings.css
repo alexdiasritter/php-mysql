@@ -1,0 +1,49 @@
+/* =========================================================
+   Dashboard de ganhos: cards de resumo e caixas de gráfico.
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    margin-bottom: 0;
+}
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+.stat-value-week { color: var(--secondary); }
+.stat-value-month { color: var(--primary); }
+
+.chart-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+.chart-empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Altura padrão dos gráficos; --chart-height permite ajustar caso a caso */
+.chart-box {
+    position: relative;
+    height: var(--chart-height, 320px);
+}
+.chart-box-sm { --chart-height: 280px; }
+
+.charts-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}

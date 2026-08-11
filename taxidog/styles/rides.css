@@ -1,0 +1,128 @@
+/* =========================================================
+   Listagem de corridas: blocos por dia, cards e navegação
+   entre períodos. Usado por history.php e pendentes.php.
+   ========================================================= */
+
+/* ---- Lista simples de corridas ---- */
+.ride-list { list-style: none; }
+.ride-list li {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Navegação semana/mês ---- */
+.week-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.week-btn {
+    background: var(--bg-card);
+    color: var(--text-main);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+}
+.week-btn.disabled { opacity: 0.3; pointer-events: none; }
+.week-label { text-align: center; font-weight: 700; }
+.week-label small { display: block; font-weight: 400; margin-top: 2px; }
+
+/* ---- Bloco de um dia (ou de uma semana, na visão mensal) ---- */
+.day-block {
+    margin-bottom: 24px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.day-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 12px;
+}
+.day-name { font-weight: 700; font-size: 1.1rem; }
+.day-date { color: var(--text-muted); font-size: 0.9rem; margin-left: 6px; }
+.day-total { margin-left: auto; color: var(--success); font-weight: 700; font-size: 1rem; }
+.day-empty { color: var(--text-muted); font-size: 0.9rem; padding: 8px 0; }
+
+/* ---- Card de corrida (histórico) ---- */
+.ride-card {
+    background: var(--bg-card);
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ride-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.ride-client { font-weight: 700; color: var(--primary); font-size: 1rem; }
+.ride-route { color: var(--text-muted); font-size: 0.85rem; }
+.ride-meta {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    display: flex;
+    gap: 12px;
+    margin-top: 2px;
+}
+.ride-price {
+    color: var(--success);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-right: 12px;
+    white-space: nowrap;
+}
+
+/* ---- Linha de corrida (pendentes) ---- */
+.ride-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ride-entry:last-child { border-bottom: none; }
+
+/* ---- Botões de ação pequenos ---- */
+.ride-actions { display: flex; gap: 6px; align-items: center; }
+.btn-sm {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+    text-decoration: none;
+}
+.btn-sm:active { transform: scale(0.92); }
+.btn-sm:hover { filter: brightness(0.9); }
+.btn-sm.btn-edit { background: var(--warning); color: #0f172a; }
+.btn-sm.btn-success { background: var(--success); color: #0f172a; }
+.btn-sm.btn-danger { background: var(--danger); color: #fff; }
+
+.no-rides { color: var(--text-muted); text-align: center; padding: 30px 0; }

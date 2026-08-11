@@ -1,0 +1,106 @@
+/* =========================================================
+   Ajustes exclusivos da tela de corridas agendadas.
+   Carregado depois de rides.css — sobrescreve o que precisa.
+   ========================================================= */
+
+h2 { margin-top: 20px; margin-bottom: 20px; }
+
+.day-total { color: white; }
+
+/* Cada corrida vira um bloco próprio, com efeito zebra */
+.ride-entry {
+    flex-direction: row;
+    gap: 15px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.15s ease, background-color 0.2s ease;
+}
+.ride-entry:last-child { margin-bottom: 0; }
+.ride-entry:nth-of-type(odd) { background-color: rgba(255, 255, 255, 0.04); }
+.ride-entry:nth-of-type(even) { background-color: rgba(255, 255, 255, 0.08); }
+.ride-entry:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Coluna esquerda: informações */
+.ride-content { flex: 1; min-width: 0; }
+
+.ride-top-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.ride-client { font-weight: 800; font-size: 0.9rem; color: white; }
+
+.ride-time-price-group { display: inline-flex; align-items: center; gap: 8px; }
+
+/* Hora em destaque, valor menor ao lado */
+.ride-time-highlight {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.ride-price {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+    margin-right: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.ride-route {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.ride-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Coluna direita: botões empilhados */
+.ride-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+.btn-sm {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    display: inline-flex;
+}
+
+/* Selo de "hoje" no cabeçalho do dia */
+.ride-today-badge {
+    margin-left: 8px;
+    background: var(--success);
+    color: #0f172a;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+}

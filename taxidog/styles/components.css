@@ -1,0 +1,197 @@
+/* =========================================================
+   Componentes reutilizáveis: cards, botões, formulários,
+   alertas, tiles da home e modal.
+   Carregado em todas as páginas.
+   ========================================================= */
+
+/* ---- Card ---- */
+.card {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Botões ---- */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: transform 0.1s, opacity 0.2s;
+    color: white;
+}
+.btn:active { transform: scale(0.98); }
+.btn:hover { opacity: 0.9; }
+.btn-primary { background-color: var(--primary); }
+.btn-secondary { background-color: var(--secondary); }
+.btn-success { background-color: var(--success); }
+.btn-danger { background-color: var(--danger); }
+
+/* ---- Formulários ---- */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--bg-input);
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    outline: none;
+    transition: border 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: var(--primary); }
+
+/* ---- Grid da home (sempre 2 colunas, inclusive no mobile) ---- */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+.app-tile {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 24px 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.app-tile:active { transform: scale(0.98); }
+.app-tile .icon { font-size: 2.6rem; margin-bottom: 12px; }
+.app-tile h3 { font-size: 1.15rem; margin-bottom: 5px; }
+.app-tile p { color: var(--text-muted); font-size: 0.8rem; }
+
+/* Em telas maiores os tiles ganham respiro */
+@media (min-width: 480px) {
+    .home-grid { gap: 16px; }
+    .app-tile { padding: 40px 20px; }
+    .app-tile .icon { font-size: 3.5rem; margin-bottom: 16px; }
+    .app-tile h3 { font-size: 1.5rem; }
+    .app-tile p { font-size: 0.9rem; }
+}
+
+/* ---- Alertas ---- */
+.alert {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: none;
+    font-weight: 600;
+}
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+.alert-error {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* ---- Modal ----
+   Precisa vir depois de .form-group: os campos dentro do modal
+   usam as duas classes e a última declaração vence. */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.active { display: flex; }
+
+.modal-box {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-box h3 {
+    margin-top: 0;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+.modal-box .form-group { margin-bottom: 16px; }
+.modal-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+.modal-box input,
+.modal-box select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.modal-box input:focus,
+.modal-box select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-actions .btn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.modal-actions .btn-primary { background: var(--primary); color: #fff; }
+.modal-actions .btn-primary:hover { filter: brightness(0.9); }
+.modal-actions .btn-secondary { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+.modal-actions .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }

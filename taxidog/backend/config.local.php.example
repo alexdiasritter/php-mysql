@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copie este arquivo para backend/config.local.php e ajuste o que precisar.
+ * Ele é mesclado por cima de backend/config.php (array_replace_recursive),
+ * então basta declarar as chaves que mudam.
+ */
+
+return [
+    'db' => [
+        'host' => 'localhost',
+        'name' => 'nome_do_banco',
+        'user' => 'usuario',
+        'pass' => 'senha',
+    ],
+    'debug' => false,
+];

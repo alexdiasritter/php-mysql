@@ -1,0 +1,35 @@
+/* =========================================================
+   Tela de histórico: cabeçalho com alternador semana/mês
+   e totalizador do período.
+   ========================================================= */
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.page-head h2 { margin: 0; }
+
+.view-toggle {
+    font-size: 0.8em;
+    text-decoration: none;
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.query-error { color: var(--danger); margin-bottom: 12px; }
+
+.period-total {
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.day-empty.text-center { padding: 20px; }

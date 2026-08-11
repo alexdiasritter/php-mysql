@@ -1,0 +1,84 @@
+/* =========================================================
+   Base: variáveis, reset, layout geral e tipografia.
+   Carregado em todas as páginas.
+   ========================================================= */
+
+:root {
+    --bg-dark: #0f172a;      /* Azul mais escuro (fundo) */
+    --bg-card: #1e293b;      /* Azul levemente mais claro (cards) */
+    --bg-input: #334155;     /* Azul dos campos de texto */
+    --primary: #3b82f6;      /* Azul vibrante (botões) */
+    --secondary: #06b6d4;    /* Ciano */
+    --success: #10b981;      /* Verde */
+    --warning: #f59e0b;      /* Amarelo/laranja */
+    --danger: #ef4444;       /* Vermelho */
+    --text-main: #f1f5f9;    /* Texto branco */
+    --text-muted: #94a3b8;   /* Texto cinza */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding-bottom: 40px;
+}
+
+/* ---- Navbar estilo app ---- */
+.navbar {
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--bg-card);
+}
+.navbar a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.navbar a:hover { color: var(--primary); }
+
+.brand {
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* ---- Container limitado para parecer mobile ---- */
+.container {
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ---- Tipografia ---- */
+h2 { margin-bottom: 20px; color: var(--text-main); font-size: 1.5rem; }
+h3 { color: var(--text-main); }
+small { color: var(--text-muted); }
+
+/* ---- Utilitários ---- */
+.text-muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+
+/* ---- Desktop ---- */
+@media (min-width: 768px) {
+    .brand { font-size: 1.4rem; }
+}

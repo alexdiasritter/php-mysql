@@ -1,0 +1,25 @@
+{
+    "name": "Táxi Dog System",
+    "short_name": "Táxi Dog",
+    "description": "Controle de corridas e faturamento",
+    "start_url": "https://alex.wbsys.dev.br/taxidog/frontend/index.php",
+    "scope": "https://alex.wbsys.dev.br/taxidog/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#0f172a",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "https://alex.wbsys.dev.br/taxidog/app-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://alex.wbsys.dev.br/taxidog/app-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
