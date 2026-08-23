@@ -2,32 +2,25 @@
 
 session_start();
 
-if (isset($_GET['nome']) && $_GET['nome'] != '') {
+include("banco.php");
+include("helpers.php");
+
+if (isset($_POST['nome']) && $_POST['nome'] != '') {
+
     $tarefa = array();
-    $tarefa['nome'] = $_GET['nome'];
 
-    if (isset($_GET['descricao'])) {
-        $tarefa['descricao'] = $_GET['descricao'];
-    } else {
-        $tarefa['descricao'] = '';
-    }
+    $tarefa['nome'] = $_POST['nome'];
+    $tarefa['descricao'] = $_POST['descricao'] ?? '';
+    $tarefa['prazo'] = $_POST['prazo'] ?? '';
+    $tarefa['prioridade'] = $_POST['prioridade'];
+    $tarefa['concluida'] = $_POST['concluida'] ?? '';
 
-    if (isset($_GET['prazo'])) {
-        $tarefa['prazo'] = $_GET['prazo'];
-    } else {
-        $tarefa['prazo'] = '';
-    }
+    gravar_tarefa($conexao, $tarefa);
 
-    $tarefa['prioridade'] = $_GET['prioridade'];
-
-    if (isset($_GET['concluida'])) {
-        $tarefa['concluida'] = $_GET['concluida'];
-    } else {
-        $tarefa['concluida'] = '';
-    }
-
-    $_SESSION['lista_tarefas'][] = $tarefa;
+    header('Location: tarefas.php');
+    exit;
 }
 
+$lista_tarefas = buscar_tarefas($conexao);
+
 include "template.php";
-?>

@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Gerenciador de Tarefas</h1>
-            <form>
+            <form method="POST">
                 <fieldset>
                     <legend>Nova tarefa</legend>
                     <label>
@@ -47,12 +47,12 @@
                 <th>Prioridade</th>
                 <th>Concluída</th>
             </tr>
-            <?php foreach ($_SESSION['lista_tarefas'] as $tarefa) : ?>
+            <?php foreach ($lista_tarefas as $tarefa) : ?>
                 <tr>
                     <td><?php echo $tarefa['nome']; ?> </td>
                     <td><?php echo $tarefa['descricao']; ?> </td>
                     <td><?php echo $tarefa['prazo']; ?> </td>
-                    <td><?php echo $tarefa['prioridade']; ?> </td>
+                    <td><?php echo traduz_prioridade($tarefa['prioridade']); ?> </td>
                     <td><?php echo $tarefa['concluida']; ?> </td>
                 </tr>
             <?php endforeach; ?>
