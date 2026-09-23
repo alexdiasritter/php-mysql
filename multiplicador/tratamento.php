@@ -1,9 +1,8 @@
 <?php
-session_start(); // INICIAR SESSÃO
+session_start();
 
-// Limpar erros anteriores
 unset($_SESSION['erro']);
-$erros = []; // Array para coletar erros
+$erros = [];
 
 // lógica de tratamento do formulário
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST)) {
@@ -11,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST)) {
     die("acesso negado");
 }
 
-// CORREÇÃO: Usar aspas nas chaves do array POST
 if (empty($_POST['text_valor_1']) || empty($_POST['text_valor_2'])) {
     $erros[] = "Os dois valores são obrigatórios";
 } else {

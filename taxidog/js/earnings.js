@@ -85,45 +85,6 @@ if (dataTag && typeof Chart !== "undefined") {
     scales: { y: { beginAtZero: true } },
   };
 
-  // 1. Tendência dos últimos 30 dias
-  criarGrafico("trendChart", {
-    type: "line",
-    data: {
-      labels: charts.days.labels,
-      datasets: [linhaBase("Ganhos (R$)", charts.days.values, CORES.azul, "rgba(59, 130, 246, 0.2)")],
-    },
-    options: linhaOpcoes,
-  });
-
-  // 2. Visão geral: semana vs mês
-  criarGrafico("earningsChart", {
-    type: "bar",
-    data: {
-      labels: ["Esta Semana", "Este Mês"],
-      datasets: [
-        barraBase(
-          "Ganhos (R$)",
-          [charts.overview.week_total, charts.overview.month_total],
-          CORES.ciano,
-          CORES.cianoBorda,
-          "y",
-        ),
-        barraBase(
-          "Qtd. Corridas",
-          [charts.overview.week_rides, charts.overview.month_rides],
-          CORES.verde,
-          CORES.verdeBorda,
-          "y1",
-        ),
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: { y: { position: "left" }, y1: { position: "right", grid: { drawOnChartArea: false } } },
-    },
-  });
-
   // 3. Comparativo mensal: valor x volume
   criarGrafico("monthlyChart", {
     type: "bar",
@@ -135,40 +96,6 @@ if (dataTag && typeof Chart !== "undefined") {
       ],
     },
     options: duploEixo,
-  });
-
-  // 4. Bairros de origem
-  criarGrafico("originsChart", {
-    type: "polarArea",
-    data: {
-      labels: charts.origins.labels,
-      datasets: [
-        {
-          data: charts.origins.values,
-          backgroundColor: PALETA_ORIGENS,
-          borderColor: "#1e293b",
-          borderWidth: 2,
-        },
-      ],
-    },
-    options: { responsive: true, scales: { r: { ticks: { backdropColor: "transparent" } } } },
-  });
-
-  // 5. Bairros de destino
-  criarGrafico("destinationsChart", {
-    type: "polarArea",
-    data: {
-      labels: charts.destinations.labels,
-      datasets: [
-        {
-          data: charts.destinations.values,
-          backgroundColor: PALETA_DESTINOS,
-          borderColor: "#1e293b",
-          borderWidth: 2,
-        },
-      ],
-    },
-    options: { responsive: true, scales: { r: { ticks: { backdropColor: "transparent" } } } },
   });
 
   // 6. Clínicas mais acionadas (barra horizontal)
@@ -194,15 +121,5 @@ if (dataTag && typeof Chart !== "undefined") {
       plugins: { legend: { display: false } },
       scales: { x: { beginAtZero: true, ticks: { stepSize: 1 } } },
     },
-  });
-
-  // 7. Média de valor por corrida
-  criarGrafico("avgChart", {
-    type: "line",
-    data: {
-      labels: charts.months.labels,
-      datasets: [linhaBase("Média (R$)", charts.months.avg, CORES.ambar, "rgba(245, 158, 11, 0.2)")],
-    },
-    options: linhaOpcoes,
   });
 }

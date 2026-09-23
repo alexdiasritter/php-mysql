@@ -32,16 +32,6 @@ require __DIR__ . '/header.php';
 </div>
 
 <div class="card chart-card">
-    <h3>Tendência (Últimos 30 dias)</h3>
-    <div class="chart-box"><canvas id="trendChart"></canvas></div>
-</div>
-
-<div class="card chart-card">
-    <h3>Visão Geral</h3>
-    <div class="chart-box"><canvas id="earningsChart"></canvas></div>
-</div>
-
-<div class="card chart-card">
     <h3>Comparativo Mensal (últimos 6 meses)</h3>
     <div class="chart-box"><canvas id="monthlyChart"></canvas></div>
 </div>
@@ -55,22 +45,6 @@ require __DIR__ . '/header.php';
             <canvas id="clinicsChart"></canvas>
         </div>
     <?php endif; ?>
-</div>
-
-<div class="card chart-card">
-    <h3>Média de Valor por Corrida (por mês)</h3>
-    <div class="chart-box chart-box-sm"><canvas id="avgChart"></canvas></div>
-</div>
-
-<div class="charts-2col">
-    <div class="card chart-card">
-        <h3>Bairros de Origem</h3>
-        <canvas id="originsChart" height="120"></canvas>
-    </div>
-    <div class="card chart-card">
-        <h3>Bairros de Destino</h3>
-        <canvas id="destinationsChart" height="120"></canvas>
-    </div>
 </div>
 
 <!-- Os dados vão para o JS por aqui, sem PHP dentro do JavaScript -->
