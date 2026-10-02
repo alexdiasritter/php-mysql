@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista com Fetch</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; padding: 40px; background: #f3f4f6; }
+    .app { max-width: 500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); overflow: hidden; }
+    h1 {
+  padding: 20px 20px 8px;
+  font-size: 1.25rem;
+  border-bottom: none;
+}
+
+#counter {
+  padding: 0 20px 16px;
+  font-size: .875rem;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+    form { display: flex; gap: 8px; padding: 16px; border-bottom: 1px solid #e5e7eb; }
+    input { flex: 1; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 1rem; outline: none; }
+    input:focus { border-color: #4f46e5; }
+    button { padding: 10px 16px; background: #4f46e5; color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    ul { list-style: none; }
+    li { padding: 14px 20px; border-bottom: 1px solid #e5e7eb; }
+    li:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+    <h1>Lista com Fetch</h1>
+    <p id="counter"></p>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Nova tarefa..." autocomplete="off">
+      <button type="submit" id="btn-add">Adicionar</button>
+    </form>
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <script src="app-fetch.js"></script>
+
+</body>
+</html>
