@@ -78,8 +78,7 @@ function render() {
     list.innerHTML = '';
     updateCounter();
     tasks.forEach(task => {
-        const li = createTaskElement(task);
-        list.appendChild(li);
+        list.appendChild(createTaskElement(task));
     });
 }
 
